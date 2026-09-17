@@ -1,0 +1,44 @@
+/* Search Word Display----------------------- */
+
+#src-wrd{
+    padding: 20px;
+    margin: 20px;
+    margin: 0px 30px;
+    margin-bottom: 40px;
+    border: none;
+    border-radius: 20px;
+    display: block;
+    align-items: center;
+    overflow-x: scroll;
+}
+
+#src-wrd::-webkit-scrollbar{
+    scroll-snap-type: none;
+}
+
+#src-wrd div{
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+
+#src-wrd div h3{
+    color: black;
+}
+
+#wrd{
+    display: flex;
+
+}
+
+#btn{
+    padding: 10px;
+    border: none;
+    border-radius: 70px;
+    background-color: silver;
+}
+
+select{
+    padding: 1px;
+}

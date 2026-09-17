@@ -1,3 +1,4 @@
+import '../styles/body.css'
 import SearchBar from './SearchBar'
 import SearchWord from './SearchWord'
 import WordOfTheDay from './WordOfTheDay'

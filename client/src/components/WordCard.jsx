@@ -1,3 +1,5 @@
+import '../styles/wordCard.css'
+
 function WordCard() {
     return (<>
     </>
