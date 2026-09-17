@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Other------------------------------ */
+
+h1 {
+    text-align: center;
+    color: silver;
+    padding: 8px 5px;
+}
+
+h3 {
+    padding-bottom: 10px;
+    color: silver;
+}
+
+h2 {
+    padding: 10px 0px;
+    color: silver;
+}
+
+p {
+    font-weight: 200;
+    font-size: medium;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    padding: 10px 10px;
+}
+
+body {
+    padding: 50px 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    background-color: antiquewhite;
+}
+
+#main {
+    background-color: #1A365D;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+/* Header----------------------- */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 20px;
+    padding: 30px 40px;
+    background-color: #1A365D;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+}
+
+header nav a {
+    font-weight: 300;
+    color: silver;
+    text-decoration: none;
+}
+
+/* Search Section---------------- */
+
+#search-sec {
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+    gap: 0.5rem;
+}
+
+#search {
+    padding: 12px 40px;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    border: none;
+}
+
+#search:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Input Field-------------------------- */
+
+input {
+    padding: 10px 200px;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    border: none;
+}
+
+input::placeholder {
+    color: black
+}
+
+input:focus {
+    outline: none;
+}
+
+input:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+/* History Button------------------------ */
+
+#history {
+    padding: 10px 30px;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    border: none;
+    margin-right: 10px;
+}
+
+#history:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#h-src-wrd{
+    padding: 20px;
+    margin: 20px;
+    margin: 0px 300px;
+    margin-bottom: 40px;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+#h-output{
+    background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+
+#h-output h3{
+    color: black;
+}
+
+#h-wrd{
+    display: flex;
+
+}
+
+/* Search Word Display----------------------- */
+
+#src-wrd{
+    padding: 20px;
+    margin: 20px;
+    margin: 0px 30px;
+    margin-bottom: 40px;
+    border: none;
+    border-radius: 20px;
+    display: block;
+    align-items: center;
+    overflow-x: scroll;
+}
+
+#src-wrd::-webkit-scrollbar{
+    scroll-snap-type: none;
+}
+
+#src-wrd div{
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+
+#src-wrd div h3{
+    color: black;
+}
+
+#wrd{
+    display: flex;
+
+}
+
+#btn{
+    padding: 10px;
+    border: none;
+    border-radius: 70px;
+    background-color: silver;
+}
+
+select{
+    padding: 1px;
+}
+
+
+
+/* Word of the Day----------------------- */
+
+#entertain div {
+    padding: 20px 20px;
+}
+
+#d-2 {
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    background-color: antiquewhite;
+}
+
+#pronounce {
+    display: flex;
+    justify-content: center;
+}
+
+#d-2 h3 {
+    font-size: large;
+    font-weight: bolder;
+    padding-left: 10px;
+    color: black;
+}
+
+#w-word{
+    font-size: larger;
+    font-weight: bold;
+}
+
+#d-2 h2 {
+    color: black;
+}
+
+#d-2 p {
+    color: black;
+}
+
+#ex{
+    display: flex;
+    padding: 10px;
+}
+
+/* Extra--------------------- */
+
+#interest nav {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+}
+
+#interest nav div {
+    display: block;
+    align-items: center;
+}
+
+#interest h1 {
+    padding: 40px 0px;
+}
+
+#interest h2 {
+    padding-left: 20px;
+}
+
+#interest h2:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Footer------------------------------ */
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px 10px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    font-size: x-large;
+}
