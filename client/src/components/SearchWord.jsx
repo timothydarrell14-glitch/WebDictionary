@@ -1,7 +1,9 @@
-function Search() {
-    return (<>
-    </>
+function SearchWord() {
+    return (
+        <div>
+            SearchWord
+        </div>
     )
 }
 
-export default Search
+export default SearchWord
