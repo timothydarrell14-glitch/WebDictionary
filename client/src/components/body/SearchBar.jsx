@@ -6,21 +6,30 @@ function SearchBar() {
 
     function handleChange(e) {
         SetWord(e.target.value)
-        print(word)
     }
+
+    useEffect(() => {
+        console.log(word)
+    }, [word])
 
     function handleHistoryButton() {
     }
 
+    function handleKeyPress(e) {
+        const key = e.key
+        if (key === "Enter") {
+            console.log("Enter key is pressed")
+        }
+    }
+
     function HandleSearchWord() {
-        print(word)
         useEffect(() => {
         }, [])
     }
     return (
         <div id="search">
             <button onClick={handleHistoryButton}>History</button>
-            <input id="search-word-input" type="text" placeholder="Please enter search word" value={word} onChange={handleChange} ></input><br></br>
+            <input id="search-word-input" type="text" placeholder="Please enter search word" value={word} onChange={handleChange} onKeyDown={handleKeyPress}></input><br></br>
             <button onClick={HandleSearchWord}>Search</button>
         </div>
     )
