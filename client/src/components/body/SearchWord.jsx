@@ -1,9 +1,5 @@
 function SearchWord() {
-    return (
-        <div>
-            SearchWord
-        </div>
-    )
+  return <div>SearchWord</div>;
 }
 
-export default SearchWord
+export default SearchWord;

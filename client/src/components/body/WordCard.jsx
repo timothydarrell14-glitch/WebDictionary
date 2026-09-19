@@ -1,9 +1,7 @@
-import '../styles/wordCard.css'
+import "../styles/wordCard.css";
 
 function WordCard() {
-    return (<>
-    </>
-    )
+  return <></>;
 }
 
-export default WordCard
+export default WordCard;

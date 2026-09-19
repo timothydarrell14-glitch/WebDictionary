@@ -1,14 +1,14 @@
 /* Footer------------------------------ */
 
 footer {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 50px 10px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px 10px;
 }
 
 footer ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    font-size: x-large;
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  font-size: x-large;
 }

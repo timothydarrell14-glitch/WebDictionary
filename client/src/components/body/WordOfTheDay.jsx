@@ -1,7 +1,5 @@
 function WordOfTheDay() {
-    return (<>
-    </>
-    )
+  return <></>;
 }
 
-export default WordOfTheDay
+export default WordOfTheDay;

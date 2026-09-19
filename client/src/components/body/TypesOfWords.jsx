@@ -1,8 +1,5 @@
 function Types() {
-    return (
-        <>
-        </>
-    )
+  return <></>;
 }
 
-export default Types
+export default Types;
