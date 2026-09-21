@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Search } from "../Search";
+import WordCard from "./WordCard";
 
 function SearchBar() {
   const [word, SetWord] = useState("");
@@ -20,7 +21,8 @@ function SearchBar() {
 
   async function initiateSearch() {
     if (word.trim() === "") return;
-    await Search(word);
+    SetWord(await Search(word));
+    <WordCard definition={word} />;
   }
 
   return (
@@ -30,7 +32,7 @@ function SearchBar() {
         id="search-word-input"
         type="text"
         placeholder="Please enter search word"
-        value={word}
+        value={word ?? ""}
         onChange={handleChange}
         onKeyDown={handleKeyPress}
       ></input>

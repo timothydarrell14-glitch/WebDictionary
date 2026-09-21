@@ -1,5 +1,7 @@
+import WordCard from "./WordCard";
+
 function SearchWord() {
-  return <div></div>;
+  return <WordCard />;
 }
 
 export default SearchWord;
