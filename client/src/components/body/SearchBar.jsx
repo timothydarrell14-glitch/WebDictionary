@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Search } from "../Search";
 
 function SearchBar() {
@@ -8,23 +8,21 @@ function SearchBar() {
     SetWord(e.target.value);
   }
 
-  useEffect(() => {
-    // console.log(word);
-  }, [word]);
-
   function handleHistoryButton() {}
 
   function handleKeyPress(e) {
     const key = e.key;
     if (key === "Enter") {
       console.log("Enter key is pressed");
+      initiateSearch();
     }
-    return Search(word);
   }
 
-  function handleSearchWord() {
-    return Search(word);
+  async function initiateSearch() {
+    if (word.trim() === "") return;
+    await Search(word);
   }
+
   return (
     <div id="search">
       <button onClick={handleHistoryButton}>History</button>
@@ -37,7 +35,7 @@ function SearchBar() {
         onKeyDown={handleKeyPress}
       ></input>
       <br></br>
-      <button onClick={handleSearchWord}>Search</button>
+      <button onClick={initiateSearch}>Search</button>
     </div>
   );
 }
