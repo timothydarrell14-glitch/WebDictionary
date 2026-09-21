@@ -1,5 +1,5 @@
 function SearchWord() {
-  return <div>SearchWord</div>;
+  return <div></div>;
 }
 
 export default SearchWord;
