@@ -22,7 +22,6 @@ function SearchBar() {
   async function initiateSearch() {
     if (word.trim() === "") return;
     SetWord(await Search(word));
-    <WordCard definition={word} />;
   }
 
   return (

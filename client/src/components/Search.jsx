@@ -1,17 +1,51 @@
-export const Search = async (searchWord) => {
-  try {
-    const word = searchWord;
-    const response = await fetch(
-      `https://freedictionaryapi.com/api/v1/entries/en/${word}`,
-    );
+import { useState, useEffect } from "react";
+import WordCard from "./body/WordCard";
 
-    if (!response.ok) {
-      throw new Error("Network Error");
+export function Search({ searchWord }) {
+  // 1. Create a state variable to hold the API data
+  const [returnedWord, setReturnedWord] = useState(null);
+  const [error, setError] = useState(null);
+
+  // 2. Run the API request whenever 'searchWord' changes
+  useEffect(() => {
+    // Don't search if the input is empty
+    if (!searchWord) {
+      setReturnedWord(null);
+      return;
     }
-    let returned_word = await response.json();
-    console.log(returned_word);
-  } catch (error) {
-    console.error(error);
-    return "Word not found";
-  }
-};
+
+    const fetchWord = async () => {
+      try {
+        setError(null); // Clear previous errors
+        const response = await fetch(
+          `https://freedictionaryapi.com/api/v1/entries/en/${searchWord}`,
+        );
+
+        if (!response.ok) {
+          throw new Error("Word not found");
+        }
+
+        const data = await response.json();
+
+        // 3. Save the data to React State (This triggers the UI update!)
+        setReturnedWord(data);
+      } catch (err) {
+        console.error(err);
+        setError("Word not found");
+        setReturnedWord(null);
+      }
+    };
+
+    fetchWord();
+  }, [searchWord]); // This array tells React to re-run the function whenever searchWord changes
+
+  // 4. Render the UI safely based on the state updates
+  return (
+    <div>
+      {error && <p className="error-message">{error}</p>}
+
+      {/* Pass the state object cleanly down to WordCard */}
+      <WordCard definition={returnedWord} />
+    </div>
+  );
+}

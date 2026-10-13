@@ -1,6 +1,6 @@
 import "../../styles/body.css";
 import SearchBar from "./SearchBar";
-import SearchWord from "./SearchWord";
+import { Search } from "../Search";
 import WordOfTheDay from "./WordOfTheDay";
 import Types from "./TypesOfWords";
 
@@ -9,7 +9,7 @@ function Body() {
     <>
       <section>
         <SearchBar />
-        <SearchWord />
+        <Search />
         <WordOfTheDay />
         <Types />
       </section>

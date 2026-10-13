@@ -1,21 +1,16 @@
 // import "../../styles/wordCard";
 
 function WordCard({ definition }) {
-  if (!definition || !definition.entries) {
-    return <p>No definitions found.</p>;
+  // 1. Guard against empty/undefined data before the user types anything
+  if (!definition) {
+    return "No word defined"; // Or return <div>Type a word to begin searching...</div>
   }
-  const [word, entries] = definition;
+  console.log(definition.entries);
+
+  // 2. Safely render now that we know definition exists
   return (
     <div>
-      <h2>{word}</h2>
-      {entries.map((entry, index) => (
-        <div key={index}>
-          <h3>{entry.partOfSpeech}</h3>
-          <h4>
-            <i>{entry.pronounciation.text}</i>
-          </h4>
-        </div>
-      ))}
+      <h2>{definition.word}</h2>
     </div>
   );
 }
