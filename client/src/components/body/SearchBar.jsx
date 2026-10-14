@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { Search } from "../Search";
-import WordCard from "./WordCard";
 
-function SearchBar() {
+function SearchBar({ onSearch }) {
   const [word, SetWord] = useState("");
 
   function handleChange(e) {
@@ -11,17 +9,14 @@ function SearchBar() {
 
   function handleHistoryButton() {}
 
-  function handleKeyPress(e) {
-    const key = e.key;
-    if (key === "Enter") {
-      console.log("Enter key is pressed");
-      initiateSearch();
-    }
+  function submitSearch() {
+    onSearch(word.trim());
   }
 
-  async function initiateSearch() {
-    if (word.trim() === "") return;
-    SetWord(await Search(word));
+  function handleKeyPress(e) {
+    if (e.key === "Enter") {
+      submitSearch();
+    }
   }
 
   return (
@@ -36,7 +31,7 @@ function SearchBar() {
         onKeyDown={handleKeyPress}
       ></input>
       <br></br>
-      <button onClick={initiateSearch}>Search</button>
+      <button onClick={submitSearch}>Search</button>
     </div>
   );
 }

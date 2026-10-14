@@ -18,7 +18,7 @@ export function Search({ searchWord }) {
       try {
         setError(null); // Clear previous errors
         const response = await fetch(
-          `https://freedictionaryapi.com/api/v1/entries/en/${searchWord}`,
+          `https://freedictionaryapi.com/api/v1/entries/en/${encodeURIComponent(searchWord)}`,
         );
 
         if (!response.ok) {
