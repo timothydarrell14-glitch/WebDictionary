@@ -11,6 +11,7 @@ function SearchBar({ onSearch }) {
 
   function submitSearch() {
     onSearch(word.trim());
+    SetWord("");
   }
 
   function handleKeyPress(e) {
