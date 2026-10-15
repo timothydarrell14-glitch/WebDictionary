@@ -1,24 +1,21 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import WordCard from "./body/WordCard";
 
 export function Search({ searchWord }) {
-  // 1. Create a state variable to hold the API data
-  const [returnedWord, setReturnedWord] = useState(null);
-  const [error, setError] = useState(null);
+  const [searchResult, setSearchResult] = useState(null);
 
-  // 2. Run the API request whenever 'searchWord' changes
   useEffect(() => {
-    // Don't search if the input is empty
     if (!searchWord) {
-      setReturnedWord(null);
       return;
     }
 
+    const controller = new AbortController();
+
     const fetchWord = async () => {
       try {
-        setError(null); // Clear previous errors
         const response = await fetch(
           `https://freedictionaryapi.com/api/v1/entries/en/${encodeURIComponent(searchWord)}`,
+          { signal: controller.signal },
         );
 
         if (!response.ok) {
@@ -26,26 +23,30 @@ export function Search({ searchWord }) {
         }
 
         const data = await response.json();
-
-        // 3. Save the data to React State (This triggers the UI update!)
-        setReturnedWord(data);
+        setSearchResult({ query: searchWord, definition: data });
       } catch (err) {
+        if (controller.signal.aborted) {
+          return;
+        }
+
         console.error(err);
-        setError("Word not found");
-        setReturnedWord(null);
+        setSearchResult({ query: searchWord, error: "Word not found" });
       }
     };
 
     fetchWord();
-  }, [searchWord]); // This array tells React to re-run the function whenever searchWord changes
+    return () => controller.abort();
+  }, [searchWord]);
 
-  // 4. Render the UI safely based on the state updates
+  const currentResult =
+    searchResult?.query === searchWord ? searchResult : null;
+
   return (
     <div>
-      {error && <p className="error-message">{error}</p>}
-
-      {/* Pass the state object cleanly down to WordCard */}
-      <WordCard definition={returnedWord} />
+      {currentResult?.error && (
+        <p className="error-message">{currentResult.error}</p>
+      )}
+      <WordCard definition={currentResult?.definition} />
     </div>
   );
 }
