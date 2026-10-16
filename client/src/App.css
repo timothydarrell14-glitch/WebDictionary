@@ -1,42 +1,7 @@
-/* Other------------------------------ */
-
-h1 {
-  text-align: center;
-  color: silver;
-  padding: 8px 5px;
-}
-
-h3 {
-  padding-bottom: 10px;
-  color: silver;
-}
-
-h2 {
-  padding: 10px 0px;
-  color: silver;
-}
-
-p {
-  font-weight: 200;
-  font-size: medium;
-  font-family:
-    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
-    Arial, sans-serif;
-  color: black;
-  padding: 10px 10px;
-}
-
 body {
-  padding: 50px 50px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 300;
   background-color: antiquewhite;
-}
-
-#main {
-  background-color: #1a365d;
-  border-radius: 20px;
-  padding: 20px;
 }
 
 /* Word of the Day----------------------- */

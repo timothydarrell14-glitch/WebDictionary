@@ -42,11 +42,13 @@ export function Search({ searchWord }) {
     searchResult?.query === searchWord ? searchResult : null;
 
   return (
-    <div>
-      {currentResult?.error && (
-        <p className="error-message">{currentResult.error}</p>
-      )}
-      <WordCard definition={currentResult?.definition} />
-    </div>
+    <section id="search-result-section">
+      <div id="search-result-div">
+        {currentResult?.error && (
+          <p className="error-message">{currentResult.error}</p>
+        )}
+        <WordCard definition={currentResult?.definition} />
+      </div>
+    </section>
   );
 }

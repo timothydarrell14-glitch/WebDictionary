@@ -7,4 +7,36 @@
   scroll-behavior: smooth;
 }
 
-/* viewport------------------------------ */
+main {
+  margin-top: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: aliceblue;
+  padding: 8px 5px;
+}
+
+h2 {
+  padding: 10px 0px;
+  color: aliceblue;
+}
+
+h3 {
+  padding-bottom: 10px;
+  color: aliceblue;
+}
+
+h4 {
+  color: aliceblue;
+}
+
+p {
+  font-weight: 200;
+  font-size: medium;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
+  color: aliceblue;
+  padding: 10px 10px;
+}

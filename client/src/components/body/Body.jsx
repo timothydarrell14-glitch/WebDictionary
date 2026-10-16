@@ -10,7 +10,7 @@ function Body() {
 
   return (
     <>
-      <section>
+      <section id="display-section">
         <SearchBar onSearch={setSearchWord} />
         <Search searchWord={searchWord} />
         <WordOfTheDay />

@@ -21,19 +21,24 @@ function SearchBar({ onSearch }) {
   }
 
   return (
-    <div id="search">
-      <button onClick={handleHistoryButton}>History</button>
-      <input
-        id="search-word-input"
-        type="text"
-        placeholder="Please enter search word"
-        value={word ?? ""}
-        onChange={handleChange}
-        onKeyDown={handleKeyPress}
-      ></input>
-      <br></br>
-      <button onClick={submitSearch}>Search</button>
-    </div>
+    <section id="search-section">
+      <div id="search-div">
+        <button id="history-button" onClick={handleHistoryButton}>
+          History
+        </button>
+        <input
+          id="search-word-input"
+          type="text"
+          placeholder="Please enter search word"
+          value={word ?? ""}
+          onChange={handleChange}
+          onKeyDown={handleKeyPress}
+        ></input>
+        <button id="search-button" onClick={submitSearch}>
+          Search
+        </button>
+      </div>
+    </section>
   );
 }
 

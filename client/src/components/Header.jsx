@@ -8,11 +8,6 @@ function Header() {
       <h1>
         <IoBook /> MyDictionary
       </h1>
-      <nav id="navbar-header">
-        <a href="">Home</a>
-        <a href="">About Us</a>
-        <a href="">Contact Us</a>
-      </nav>
     </header>
   );
 }
